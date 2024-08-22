@@ -36,8 +36,8 @@ public class MainController {
     //게임 진행
     private void proceedGame(GameData gameData) {
         int moveCount = 0;
+        System.out.println(ViewMessage.GAME_RESULT);
         while (moveCount++ < gameData.trialCount()) {
-            System.out.println(moveCount + "차 시기" + ViewMessage.GAME_RESULT);
             service.move(gameData.carList());
             OutputView.printResult(gameData.carList());
         }
