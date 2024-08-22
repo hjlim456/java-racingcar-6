@@ -19,7 +19,7 @@ public class MainController {
     public void run() {
         GameData gameData = initGame();
         proceedGame(gameData);
-        //endGame(gameData);
+        endGame(gameData);
     }
 
     //게임 초기화(시작)
@@ -44,8 +44,9 @@ public class MainController {
     }
 
     //게임 종료
-//    private void endGame(GameData gameData) {
-//        OutputView.printWinner(gameData);
-//    }
+    private void endGame(GameData gameData) {
+        List<Car> winner = service.getWinner(gameData.carList());
+        OutputView.printWinner(winner);
+    }
 
 }

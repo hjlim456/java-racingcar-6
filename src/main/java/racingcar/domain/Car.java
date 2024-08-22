@@ -13,6 +13,14 @@ public class Car{
         this.position = 0;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
     private void validateName(String name) {
         if(name.length() > MAX_NAME_LENGTH){
             throw new IllegalArgumentException(ErrorMessage.EXCESS_NAME_LENGTH_LIMIT);
