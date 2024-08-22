@@ -1,5 +1,7 @@
 package racingcar;
 
+import racingcar.domain.Car;
+
 import java.util.List;
 
 public class RacingService {

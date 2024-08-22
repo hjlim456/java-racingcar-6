@@ -1,7 +1,9 @@
 package racingcar;
 
+import racingcar.domain.Car;
+import racingcar.domain.GameData;
+import racingcar.message.ViewMessage;
 import racingcar.view.InputView;
-import racingcar.view.OutputView;
 
 import java.util.List;
 
@@ -20,11 +22,11 @@ public class MainController {
 
     //게임 초기화(시작)
     private GameData initGame() {
-        List<String> carNames = Converter.splitByDelimiter(InputView.inputString(Message.INPUT_CAR_NAMES), ",");
+        List<String> carNames = Converter.splitByDelimiter(InputView.inputString(ViewMessage.INPUT_CAR_NAMES), ",");
         List<Car> carList =carNames.stream().map(Car::new).toList();
         return new GameData(
                 carList,
-                InputView.inputInteger((Message.INPUT_TRIAL_COUNT))
+                InputView.inputInteger((ViewMessage.INPUT_TRIAL_COUNT))
         );
     }
 
