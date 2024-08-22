@@ -4,7 +4,9 @@ import racingcar.domain.Car;
 import racingcar.domain.GameData;
 import racingcar.message.ViewMessage;
 import racingcar.view.InputView;
+import racingcar.view.OutputView;
 
+import javax.swing.text.View;
 import java.util.List;
 
 public class MainController {
@@ -35,9 +37,9 @@ public class MainController {
     private void proceedGame(GameData gameData) {
         int moveCount = 0;
         while (moveCount++ < gameData.trialCount()) {
-            System.out.println("여기까지확인");
-            //service.move(gameData.carNames());
-            //OutputView.printResult(gameData.racerList());
+            System.out.println(moveCount + "차 시기" + ViewMessage.GAME_RESULT);
+            service.move(gameData.carList());
+            OutputView.printResult(gameData.carList());
         }
     }
 
