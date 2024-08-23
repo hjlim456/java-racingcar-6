@@ -21,6 +21,7 @@ class ConverterTest {
     public static Stream<Arguments> splitByDelimiterArguments() {
         return Stream.of(
                 Arguments.of("a,b,c,d" , "," , List.of("a","b","c","d")),
+                Arguments.of("a,b,c,d," , "," , List.of("a","b","c","d")),
                 Arguments.of("a b c d" , " " , List.of("a","b","c","d")),
                 Arguments.of(",,," , "," , List.of())
         );

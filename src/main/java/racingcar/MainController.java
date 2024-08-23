@@ -1,6 +1,7 @@
 package racingcar;
 
 import racingcar.domain.Car;
+import racingcar.domain.Cars;
 import racingcar.domain.GameData;
 import racingcar.message.ViewMessage;
 import racingcar.view.InputView;
@@ -10,11 +11,6 @@ import javax.swing.text.View;
 import java.util.List;
 
 public class MainController {
-    private final RacingService service;
-
-    public MainController(RacingService service) {
-        this.service = service;
-    }
 
     public void run() {
         GameData gameData = initGame();
@@ -31,7 +27,7 @@ public class MainController {
 
 
         return new GameData(
-                carList,
+                new Cars(carList),
                 InputView.inputInteger((ViewMessage.INPUT_TRIAL_COUNT))
         );
     }
@@ -42,14 +38,16 @@ public class MainController {
         int moveCount = 0;
         System.out.println(ViewMessage.GAME_RESULT);
         while (moveCount++ < gameData.trialCount()) {
-            service.move(gameData.carList());
-            OutputView.printResult(gameData.carList());
+            gameData.cars()
+                    .moveRandomly();
+            OutputView.printResult(gameData.cars());
+            System.out.println();
         }
     }
 
     //게임 종료
     private void endGame(GameData gameData) {
-        List<Car> winner = service.getWinner(gameData.carList());
+        List<Car> winner = gameData.cars().getWinnerList();
         OutputView.printWinner(winner);
     }
 

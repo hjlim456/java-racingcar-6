@@ -4,7 +4,7 @@ import racingcar.message.ErrorMessage;
 
 import java.util.List;
 
-public record GameData(List<Car> carList, int trialCount) {
+public record GameData(Cars cars, int trialCount) {
     public GameData{
         validTrialCount(trialCount);
     }
