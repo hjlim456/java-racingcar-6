@@ -22,12 +22,19 @@ public class Car{
     }
 
     private void validateName(String name) {
-        if (name == null || name.isEmpty()) {
-            throw new IllegalArgumentException(ErrorMessage.INVALID_CAR_NAME);
-        }
+        validateBlank(name);
+        validateLength(name);
+    }
 
+    private static void validateLength(String name) {
         if(name.length() > MAX_NAME_LENGTH){
             throw new IllegalArgumentException(ErrorMessage.EXCESS_NAME_LENGTH_LIMIT);
+        }
+    }
+
+    private static void validateBlank(String name) {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException(ErrorMessage.INVALID_CAR_NAME);
         }
     }
 
