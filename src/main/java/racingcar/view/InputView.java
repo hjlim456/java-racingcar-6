@@ -7,7 +7,7 @@ public class InputView {
 
     public static String inputString(String message) {
         System.out.println(message);
-        String inputValue = Console.readLine();
+        String inputValue = Console.readLine().trim();
         validataBlank(inputValue);
         return inputValue;
     }
@@ -15,7 +15,7 @@ public class InputView {
 
     public static int inputInteger(String message) {
         System.out.println(message);
-        String inputValue = Console.readLine();
+        String inputValue = Console.readLine().trim();
         validataBlank(inputValue);
         validataInteger(inputValue);
         return Integer.parseInt(inputValue);
