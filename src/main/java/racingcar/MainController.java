@@ -7,7 +7,6 @@ import racingcar.message.ViewMessage;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
-import javax.swing.text.View;
 import java.util.List;
 
 public class MainController {
@@ -35,12 +34,12 @@ public class MainController {
 
     //게임 진행
     private void proceedGame(GameData gameData) {
-        int moveCount = 0;
+    int moveCount = 0;
         System.out.println(ViewMessage.GAME_RESULT);
         while (moveCount++ < gameData.trialCount()) {
             gameData.cars()
                     .moveRandomly();
-            OutputView.printResult(gameData.cars());
+            OutputView.printMovingResult(gameData.cars());
             System.out.println();
         }
     }

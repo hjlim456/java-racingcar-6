@@ -8,9 +8,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public record Cars(List<Car> carList) {
-    public Cars{
-
-    }
     public void moveRandomly(){
         carList.forEach(car -> {
 
