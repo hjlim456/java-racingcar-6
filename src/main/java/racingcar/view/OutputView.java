@@ -2,6 +2,7 @@ package racingcar.view;
 
 import racingcar.domain.Car;
 import racingcar.domain.Cars;
+import racingcar.message.ViewMessage;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,7 +18,7 @@ public class OutputView {
         String winnerString = winner.stream()
                 .map(Car::getName)
                 .collect(Collectors.joining(", "));
-        System.out.printf("최종 우승자 : %s", winnerString);
+        System.out.printf(ViewMessage.WINNER_RESULT_FORMAT, winnerString);
     }
 
 
