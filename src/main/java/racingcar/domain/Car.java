@@ -23,10 +23,10 @@ public class Car{
 
     private void validateName(String name) {
         validateBlank(name);
-        validateLength(name);
+        validateNameLength(name);
     }
 
-    private static void validateLength(String name) {
+    private static void validateNameLength(String name) {
         if(name.length() > MAX_NAME_LENGTH){
             throw new IllegalArgumentException(ErrorMessage.EXCESS_NAME_LENGTH_LIMIT);
         }
