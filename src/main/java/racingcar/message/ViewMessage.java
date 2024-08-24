@@ -8,4 +8,6 @@ public class ViewMessage {
 
     public static String WINNER_RESULT_FORMAT = "최종 우승자 : %s";
 
+    public static String WINNER_RESULT_DELIMITER = ", ";
+
 }

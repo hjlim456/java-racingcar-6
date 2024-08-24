@@ -2,6 +2,8 @@ package racingcar.domain;
 
 import racingcar.message.ErrorMessage;
 
+import static racingcar.domain.GameOption.*;
+
 public class Car{
     private static final int MAX_NAME_LENGTH = 5;
     private final String name;
@@ -44,6 +46,6 @@ public class Car{
 
     @Override
     public String toString() {
-        return name + " : " +"-".repeat(position);
+        return name + " : " + CAR_POSITION_SIGN.repeat(position);
     }
 }

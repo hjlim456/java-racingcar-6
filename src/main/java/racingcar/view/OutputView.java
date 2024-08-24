@@ -7,6 +7,8 @@ import racingcar.message.ViewMessage;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static racingcar.message.ViewMessage.*;
+
 public class OutputView {
     public static void printMessage(String message) {
         System.out.println(message);
@@ -17,8 +19,8 @@ public class OutputView {
     public static void printWinner(List<Car> winner) {
         String winnerString = winner.stream()
                 .map(Car::getName)
-                .collect(Collectors.joining(", "));
-        System.out.printf(ViewMessage.WINNER_RESULT_FORMAT, winnerString);
+                .collect(Collectors.joining(WINNER_RESULT_DELIMITER));
+        System.out.printf(WINNER_RESULT_FORMAT, winnerString);
     }
 
 
