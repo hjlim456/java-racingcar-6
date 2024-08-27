@@ -35,7 +35,7 @@ public class MainController {
     //게임 진행
     private void proceedGame(GameData gameData) {
     int moveCount = 0;
-        System.out.println(ViewMessage.GAME_RESULT);
+        OutputView.printMessage(ViewMessage.GAME_RESULT);
         while (moveCount++ < gameData.trialCount()) {
             gameData.cars()
                     .moveRandomly();
